@@ -2,8 +2,10 @@ import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Quiz from "../_components/quiz";
+import { checkOnboarding } from "@/lib/checkOnboarding";
 
-export default function MockInterviewPage() {
+export default async function MockInterviewPage() {
+  await checkOnboarding();
   return (
     <div className="container mx-auto space-y-4 py-6">
       <div className="flex flex-col space-y-2 mx-2">

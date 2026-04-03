@@ -3,8 +3,10 @@ import Link from "next/link";
 import { Plus } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import CoverLetterList from "./_components/cover-letter-list";
+import { checkOnboarding } from "@/lib/checkOnboarding";
 
 export default async function CoverLetterPage() {
+  await checkOnboarding();
   const coverLetters = await getCoverLetters();
 
   return (
